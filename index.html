@@ -2,12 +2,22 @@
 <html lang="en">
 <head>
     <title>detects test run</title>
+    <link rel="stylesheet" href="index.css" type="text/css" />
     <script src="esprima.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="matcher.js"></script>
+    <script src="patterns.js"></script>
     <script src="detects.js"></script>
+    <script>
+        var age = 0;
+        window.setInterval(function () {
+            age++;
+            document.getElementById('counter').innerText = 'Last ran ' + age + ' seconds ago';
+        }, 1000);
+    </script>
 </head>
 <body>
-
-
+    <span id="counter">Last ran 0 seconds ago</span>
+    <div id="testResults"></div>
 </body>
 </html>

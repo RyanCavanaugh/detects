@@ -1,0 +1,23 @@
+﻿body {
+    position: relative;
+}
+
+#code {
+    font-family: 'Courier New';
+    white-space: pre;
+}
+
+#code span.active {
+    font-weight: bold;
+    background-color: yellow;
+}
+
+div.left-column {
+    position: fixed;
+    width: 550px;
+}
+
+div.right-column {
+    position: absolute;
+    left: 550px;
+}

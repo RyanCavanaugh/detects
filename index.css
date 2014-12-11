@@ -1,0 +1,99 @@
+﻿
+div.test {
+    width: 30em;
+    padding-left: 8px;
+    padding-bottom: 4px;
+}
+
+div.test h1 {
+    font-size: 120%;
+    margin-bottom: 0px;
+}
+
+div.test:nth-child(2n+1) {
+    background: #E0E0E0;
+}
+div.test:nth-child(2n) {
+    background: #EFEFEF;
+}
+
+div.pass {
+    color: darkgreen;
+    font-style: italic;
+}
+div.fail {
+    color: gray;
+}
+
+div.pass::before {
+    content: '✓';
+    color: green;
+}
+div.pass::before, div.fail::before {
+    display: inline-block;
+    font-size: 120%;
+    width: 1.1em;
+}
+div.fail::before {
+    content: '-';
+    color: red;
+}
+
+ul, li {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    font-family: 'Courier New';
+    position: relative;
+    margin-left: 16px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul::before {
+    position: absolute;
+    top: 1.15em;
+    bottom: 1px;
+    left: 0.5em;
+    content: '';
+}
+
+ul ul::before {
+    border-left: solid blue 1px;
+}
+
+ul ul ul::before {
+    border-left: solid green 1px;
+}
+
+ul ul ul ul::before {
+    border-left: solid red 1px;
+}
+
+ul ul ul ul ul::before {
+    border-left: solid orange 1px;
+}
+
+ul ul ul ul ul ul::before {
+    border-left: solid grey 1px;
+}
+
+ul ul ul ul ul ul ul::before {
+    border-left: solid yellow 1px;
+}
+
+ul ul ul ul ul ul ul ul::before {
+    border-left: solid black 1px;
+}
+
+ul ul ul ul ul ul ul ul ul::before {
+    border-left: solid red 1px;
+}
+
+ul ul ul ul ul ul ul ul ul ul::before {
+    border-left: solid grey 1px;
+}
