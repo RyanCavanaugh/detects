@@ -19,6 +19,16 @@ var Patterns;
         }
     };
 
+    Patterns.thisCapture = {
+        "type": "VariableDeclarator",
+        "id": {
+            "name": "_this"
+        },
+        "init": {
+            "type": "ThisExpression"
+        }
+    };
+
     Patterns.nestedModule = {
         "type": "ExpressionStatement",
         "expression": {

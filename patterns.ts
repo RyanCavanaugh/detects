@@ -18,6 +18,16 @@ module Patterns {
         }
     };
 
+    export var thisCapture = {
+        "type": "VariableDeclarator",
+        "id": {
+            "name": "_this"
+        },
+        "init": {
+            "type": "ThisExpression"
+        }
+    };
+
     export var nestedModule = {
         "type": "ExpressionStatement",
         "expression": {
