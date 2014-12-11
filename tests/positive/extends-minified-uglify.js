@@ -1,0 +1,1 @@
+var __extends=this.__extends||function(t,n){function o(){this.constructor=t}for(var r in n)n.hasOwnProperty(r)&&(t[r]=n[r]);o.prototype=n.prototype,t.prototype=new o},MyClass=function(){function t(){}return t.prototype.foo=function(){},t}(),b=function(t){function n(){t.apply(this,arguments)}return __extends(n,t),n}(MyClass);

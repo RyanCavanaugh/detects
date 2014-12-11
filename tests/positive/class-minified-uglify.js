@@ -1,0 +1,1 @@
+var foo = function () { function o(o, t) { void 0 === t && (t = 42), this.foo = o, this.bar = t } return o.prototype.method = function () { return 0 }, o.x = "thing", o }();
