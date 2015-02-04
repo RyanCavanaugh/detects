@@ -79,3 +79,5 @@ module StructuralMatch {
         return true;
     }
 }
+
+export = StructuralMatch;

@@ -96,3 +96,5 @@ var StructuralMatch;
     }
     StructuralMatch.isMatch = isMatch;
 })(StructuralMatch || (StructuralMatch = {}));
+
+module.exports = StructuralMatch;

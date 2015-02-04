@@ -295,3 +295,5 @@ module Patterns {
         }
     };
 }
+
+export = Patterns;

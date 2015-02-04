@@ -296,3 +296,5 @@ var Patterns;
         }
     };
 })(Patterns || (Patterns = {}));
+
+module.exports = Patterns;
