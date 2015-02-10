@@ -1,5 +1,5 @@
-/// <reference path="esprima.d.ts" />
-/// <reference path="jquery.d.ts" />
+/// <reference path="../typings/esprima/esprima.d.ts" />
+/// <reference path="../typings/jquery/jquery.d.ts" />
 
 module StructuralMatch {
     function read(value: any, key: string): any[] {

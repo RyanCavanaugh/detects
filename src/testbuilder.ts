@@ -1,5 +1,16 @@
-/// <reference path="esprima.d.ts" />
-/// <reference path="jquery.d.ts" />
+/// <reference path="../typings/esprima/esprima.d.ts" />
+/// <reference path="../typings/jquery/jquery.d.ts" />
+
+import $ = require('jquery');
+import esprima = require('esprima');
+import StructuralMatch = require('./matcher');
+import tsprima = require('./tsprima');
+
+// console.log(tsprima.sourceFileToJSON(ts.createSourceFile('empty.ts', 'var x: string = 23', ts.ScriptTarget.ES5, false)));
+
+function parse(s: string): {} {
+    return JSON.parse(tsprima.sourceFileToJSON(ts.createSourceFile('test.ts', s, ts.ScriptTarget.Latest, true)));
+}
 
 $(() => {
     var inputBox = $('#input');
@@ -21,8 +32,8 @@ $(() => {
 
 function runBackTest() {
     var test = JSON.parse($('#test').val());
-    var backtestAst = esprima.parse($('#back').val());
-    if (StructuralMatch.isMatchDeep(backtestAst.body, test)) {
+    var backtestAst = parse($('#back').val());
+    if (StructuralMatch.isMatchDeep(backtestAst, test)) {
         $('#backtest-result').text('Passed');
     } else {
         $('#backtest-result').text('Failed');
@@ -125,8 +136,8 @@ function produceTest() {
 
 function getCodeBlock() {
     var code = $('#input').val();
-    var parsed = esprima.parse(code, { range: true });
-    var firstStatement = parsed.body[0];
+    var parsed = parse(code);
+    var firstStatement = parsed;
 
     return {
         code: code,
@@ -143,7 +154,7 @@ function generateTestBuilderUI() {
 
     var rangeStack: number[][] = [];
     var keyStack: string[] = [];
-    function emitTo(node: esprima.Syntax.Node, elem: JQuery) {
+    function emitTo(node: any, elem: JQuery) {
         var parentList = $('<ul>');
         Object.keys(node).forEach(k => {
             if (k === 'range' || k === 'rest' || k === 'generator') return;
